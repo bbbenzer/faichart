@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Selectable - Default functionality</title>
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/style.css">
+ 
+  <style>
+	  #feedback { font-size: 1.4em; }
+	  #selectable .ui-selecting { background: #FE0040; }
+	  #selectable .ui-selected { background: #F00814; color: white; }
+	  #selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+	  #selectable li { margin: 3px; padding: 0.4em; font-size: 1.1em; height: 21px; }
+  </style>
+  <script src="js/jquery-1.12.4.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script>
+	  $( function() {
+			$( "#selectable" ).selectable();
+			// trigger click on submit button
+			$('ul.art-vmenu li.l01').click(function(e) {
+				alert("vvvvvvvvvv");
+			});
+	  });
+  </script>
+</head>
+<body>
+	<ol id="selectable">
+	  <li id="l01" class="ui-widget-content">กราฟ 01</li>
+	  <li class="ui-widget-content">กราฟ 02</li>
+	  <li class="ui-widget-content">กราฟ 03</li>
+	  <li class="ui-widget-content">กราฟ 04</li>
+	  <li class="ui-widget-content">กราฟ 05</li>
+	  <li class="ui-widget-content">กราฟ 06</li>
+	  <li class="ui-widget-content">กราฟ 07</li>
+	  <li class="ui-widget-content">กราฟ 08</li>
+	  <li class="ui-widget-content">กราฟ 09</li>
+	  <li class="ui-widget-content">กราฟ 10</li>
+	  <li class="ui-widget-content">กราฟ 11</li>
+	  <li class="ui-widget-content">กราฟ 12</li>
+	  <li class="ui-widget-content">กราฟ 13</li>
+	</ol>
+
+ <ul class="art-vmenu">
+	<li class="l01">กราฟ 01</li>    
+	<li class="l02">กราฟ 02</li> 
+	<li class="l03">กราฟ 03</li>  
+	<li class="l04">กราฟ 04</li>  
+	<li class="l05">กราฟ 05</li> 
+	<li class="l06">กราฟ 06</li> 
+	<li class="l07">กราฟ 07</li> 
+	<li class="l08">กราฟ 08</li> 
+	<li class="l09">กราฟ 09</li> 
+	<li class="l10">กราฟ 10</li> 
+	<li class="l11">กราฟ 11</li> 
+	<li class="l12">กราฟ 12</li> 
+	<li class="l13">กราฟ 13</li> 
+</ul>
+ 
+</body>
+</html>
