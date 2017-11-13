@@ -1,4 +1,4 @@
-<?php
+<?php 
 require 'include/connect.php';
 $result = mysql_query( "UPDATE chart_menu SET Chk = 4" );
 mysql_close($meConnect);
@@ -15,7 +15,7 @@ mysql_close($meConnect);
 					$(function () {
 						//getSomething();
 					});
-
+					
 					function xBack(){
 						window.location = "index.php";
 					}
@@ -38,7 +38,7 @@ mysql_close($meConnect);
 									var namex = [];
 									var i = 1;
 									var n = 0;
-
+									
 								    $.each(data, function(key, val) {
 										total1.push( {name:val.name,y:parseFloat(val.d1)} );
 										total2.push( {name:val.name,y:parseFloat(val.d2)} );
@@ -77,13 +77,12 @@ mysql_close($meConnect);
 					}
 
 					function getGraph( xName,Data ){
-						console.log(Data);
 					// Create the chart
 								var mm = $("#xMonth").val();
 								var yy = $("#xYear").val();
 
 								var mthai = getMonthThai( mm );
-
+								
 									  Highcharts.chart('container', {
 												chart: {
 													type: 'column'

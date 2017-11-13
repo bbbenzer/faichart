@@ -1,4 +1,4 @@
-<?php
+<?php 
 require 'include/connect.php';
 $result = mysql_query( "UPDATE chart_menu SET Chk = 1" );
 mysql_close($meConnect);
@@ -16,7 +16,7 @@ mysql_close($meConnect);
 					$(function () {
 						getSomething();
 					});
-
+					
 					function xBack(){
 						window.location = "index.php";
 					}
@@ -41,12 +41,12 @@ mysql_close($meConnect);
 									yearx[3] = 'ส่วนกลาง';
 									yearx[4] = 'Franchise';
 									yearx[5] = '7-11';
-
+									
 								    $.each(data, function(key, val) {
 										total.push({name:val.name,y:parseFloat(val.y),drilldown:val.drilldown});
 								    });
 								    getGraph( yearx,total );
-
+									
 									var url="ShowTable01.php";
 									$.post(url,arr,function(data){
 										$("#div1").html(data)
@@ -65,7 +65,7 @@ mysql_close($meConnect);
 
 								  getGraph( total );
 							});
-
+						
 					}
 
 					function getMonthThai( mm ){
@@ -180,6 +180,6 @@ mysql_close($meConnect);
 		<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 		<div id="div1"></div>
-
+        
 	</body>
 </html>

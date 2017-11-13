@@ -5,7 +5,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$resArray = array();
 		$xMM = $_POST['xMonth'];
 		$xYY = $_POST['xYear'];
-
+		
 		$xOr = "( ";
         $xOrL = "( ";
         for($i=1;$i<=intval($xMM);$i++){
@@ -30,26 +30,25 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 							SELECT $xOr
 							FROM data_sale_year
 							WHERE data_sale_year.xYear = '" . (intval($xYY)-1) . "'
-						   AND data_sale_year.bCode = branch_fac.Cus_Code
-							)
-						)/(
-							SELECT $xOr
+						   AND data_sale_year.bCode = branch_fac.Cus_Code 
+							) 
+						)/( 
+							SELECT $xOr 
 							FROM data_sale_year
-							WHERE data_sale_year.xYear = '" . (intval($xYY)-1) . "'
-						   AND data_sale_year.bCode = branch_fac.Cus_Code
-							)
-						)*100 AS dd FROM branch_fac
+							WHERE data_sale_year.xYear = '" . (intval($xYY)-1) . "' 
+						   AND data_sale_year.bCode = branch_fac.Cus_Code 
+							) 
+						)*100 AS dd FROM branch_fac 
 						WHERE branch_fac.Active = 1 ORDER BY dd DESC";
 		//echo $xSql;
 		$result = mysql_query( $xSql );
 		while ($Row = mysql_fetch_array($result))
 		{
-			array_push(
+			array_push( 
 				$resArray,
 				array("name"=>$Row["Branch_Name"],"y"=>number_format((float)$Row["dd"], 2, '.', ''),"drilldown"=>$Row["Branch_Name"])
 			);
 		}
-
 
 mysql_close($meConnect);
 		echo json_encode($resArray);

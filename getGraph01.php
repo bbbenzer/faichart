@@ -2,7 +2,7 @@
 //session_start();
 require 'include/connect.php';
 if($_SERVER['REQUEST_METHOD']=='POST'){
-
+	
 		$xMonth = $_POST['xMonth'];
 		$xYear = $_POST['xYear'];
 
@@ -16,47 +16,47 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 		$sDate = intval($xYear)."-".$xMonth."-01";
 		$eDate = date("Y-m-t", strtotime($sDate));
-
-		$Sql = "SELECT
+	
+		$Sql = "SELECT 
 				(SELECT SUM(data_sale_year.M$xMonth)
 				FROM data_sale_year
 				INNER JOIN branch_fac ON data_sale_year.bCode = branch_fac.Cus_Code
-				WHERE branch_fac.gId = 1
-				AND branch_fac.Active = 1
+				WHERE branch_fac.gId = 1 
+				AND branch_fac.Active = 1 
 				AND data_sale_year.xYear = '$xYear'
 				) AS xS01,
 				(SELECT SUM(data_sale_year.M$xMonth)
 				FROM data_sale_year
 				INNER JOIN branch_fac ON data_sale_year.bCode = branch_fac.Cus_Code
-				WHERE branch_fac.gId = 5
-				AND branch_fac.Active3 = 1 AND
+				WHERE branch_fac.gId = 5 
+				AND branch_fac.Active3 = 1 AND 
 				data_sale_year.xYear = '$xYear'
 				) AS xS02,
 				(SELECT SUM(data_sale_year.M$xMonth)
 				FROM data_sale_year
 				INNER JOIN branch_fac ON data_sale_year.bCode = branch_fac.Cus_Code
-				WHERE branch_fac.gId = 2
+				WHERE branch_fac.gId = 2 
 				AND branch_fac.Active1 = 1
 				AND data_sale_year.xYear = '$xYear'
 				) AS xS03,
 				(SELECT SUM(data_sale_year.M$xMonth)
 				FROM data_sale_year
 				INNER JOIN branch_fac ON data_sale_year.bCode = branch_fac.Cus_Code
-				WHERE branch_fac.gId = 6
+				WHERE branch_fac.gId = 6 
 				AND branch_fac.Active5 = 1
 				AND data_sale_year.xYear = '$xYear'
 				) AS xS04,
 				(SELECT SUM(data_sale_year.M$xMonth)
 				FROM data_sale_year
 				INNER JOIN branch_fac ON data_sale_year.bCode = branch_fac.Cus_Code
-				WHERE branch_fac.gId = 4
+				WHERE branch_fac.gId = 4 
 				AND branch_fac.Active4 = 1
 				AND data_sale_year.xYear = '$xYear'
 				) AS xS05,
 				(SELECT SUM(data_sale_year.M$xMonth)
 				FROM data_sale_year
 				INNER JOIN branch_fac ON data_sale_year.bCode = branch_fac.Cus_Code
-				WHERE branch_fac.gId = 3
+				WHERE branch_fac.gId = 3 
 				AND branch_fac.Active2 = 1
 				AND data_sale_year.xYear = '$xYear'
 				) AS xS06";
@@ -75,10 +75,9 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 			array_push( $resArray,array("name"=>$Br[6],"y"=>$xV45,"drilldown"=>$Row["sM6"]));
 			$i++;
 		}
-
 mysql_close($meConnect);
 		echo json_encode($resArray);
 
-
+		
 }
 ?>
