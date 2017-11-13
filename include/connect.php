@@ -4,8 +4,8 @@
  */
 $cfHost = "localhost";
 $cfUser = "root";
-$cfPassword = "A$192dijd";
-$cfDatabase = "fai_fac";
+$cfPassword = "";
+$cfDatabase = "fai_fai";
 /*
  * connection mysql
  */
@@ -17,7 +17,7 @@ mysql_query("SET NAMES 'utf8' COLLATE 'utf8_general_ci';");
 //mysql_query("SET character_set_client=utf8");
 //mysql_query("SET character_set_connection=utf8");
 
-set_time_limit(0);   
-ini_set('mysql.connect_timeout','0');   
-ini_set('max_execution_time', '0'); 
+set_time_limit(0);
+ini_set('mysql.connect_timeout','0');
+ini_set('max_execution_time', '0');
 ?>

@@ -3,9 +3,9 @@
  * Database configuration
  */
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'A$192dijd');
+define('DB_PASSWORD', '');
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'fai_fac');
+define('DB_NAME', 'fai_fai');
 
 define('USER_CREATED_SUCCESSFULLY', 1);
 define('USER_CREATE_FAILED', 0);
